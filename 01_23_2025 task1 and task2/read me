@@ -1,1 +1,40 @@
 This is for week 7 class activity
+
+Iris Dataset Analysis
+Overview: The Iris dataset contains measurements such as sepal length, sepal width, petal length, and petal width from three different species of iris flowers. This dataset is commonly used in data science for tasks like classification.
+
+Dataset Description:
+
+sepal_len: Length of the sepal measured in centimeters.
+sepal_wid: Width of the sepal measured in centimeters.
+petal_len: Length of the petal measured in centimeters.
+petal_wid: Width of the petal measured in centimeters.
+class: Species of the iris flower, represented as an integer.
+Code Functionality:
+
+Data Loading: The Iris dataset is loaded using the scikit-learn library.
+DataFrame Creation: The data is transformed into a structured pandas DataFrame for easy manipulation.
+Data Cleaning: The script removes rows where all data points are missing to ensure the quality of the dataset.
+Correlation Analysis: To understand the relationships between the different features, a correlation analysis is performed. This analysis helps identify linear relationships between variables.
+
+Calculating Correlation: To calculate and visualize the correlation matrix among features, use the following Python code:
+
+python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Calculate the correlation matrix
+correlation_matrix = iris_df.corr()
+
+# Plot the correlation matrix
+plt.figure(figsize=(8, 6))
+sns.heatmap(correlation_matrix, annot=True, fmt=".2f", cmap='coolwarm')
+plt.title('Correlation Matrix of Iris Dataset Features')
+plt.show()
+
+
+This heatmap visually represents the correlations where:
+A value of 1 indicates a perfect positive correlation.
+A value of -1 indicates a perfect negative correlation.
+Values close to 0 indicate no correlation.
+Positive values suggest a direct relationship where increasing one feature increases the other, whereas negative values suggest an inverse relationship.
